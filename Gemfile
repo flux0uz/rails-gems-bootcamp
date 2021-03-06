@@ -25,6 +25,16 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Haml erb
+gem "haml-rails", "~> 2.0"
+# Better form for bootstrap
+gem "simple_form"
+# Fake data
+gem "faker"
+# User authentication
+gem "devise"
+
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
