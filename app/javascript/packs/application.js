@@ -7,12 +7,10 @@ require("@rails/ujs").start();
 require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
+require("trix");
+require("@rails/actiontext");
 
+import "@fortawesome/fontawesome-free/css/all";
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap";
 require("stylesheets/application.scss");
-
-import "@fortawesome/fontawesome-free/css/all";
-
-require("trix");
-require("@rails/actiontext");
