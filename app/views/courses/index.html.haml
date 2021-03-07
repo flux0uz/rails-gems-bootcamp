@@ -1,7 +1,37 @@
-%h1 
-  Courses:
-  = @courses.count
+%h3.mb-5
+  .text-center
+    Courses
+    .badge.badge-info
+      = @courses.count
 
 .courses-courses-container
-  .card-columns
-    = render @courses
+  .row
+    .col-md-2
+      .mt-4.mb-2
+        = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
+          = f.label :title
+          = f.search_field :title_cont, placeholder: 'Ruby', class: 'form-control form-control-sm'
+          .mt-2
+          = f.label :description
+          = f.search_field :short_description_cont, placeholder: 'Best course', class: 'form-control form-control-sm'
+          .mt-2
+          .mt-2
+          = f.label :price
+          = f.search_field :price_eq, placeholder: '100', class: 'form-control form-control-sm'
+          .mt-2
+          = f.label :teacher
+          = f.search_field :user_email_cont, placeholder: 'Email', class: 'form-control form-control-sm'
+          .mt-2
+          = f.label :language
+          = f.select :language_cont, Course.languages, include_blank: true, class: 'custom-select'
+          .mt-2
+          = f.label :level
+          = f.select :level_cont, Course.levels, include_blank: true, class: 'custom-select'
+          .mt-2 
+          = f.submit
+        .mt-2
+        = link_to courses_path, class:"btn btn-sm btn-secondary" do
+          .fa.fa-sync
+    .col-md-10
+      .card-columns
+        = render @courses

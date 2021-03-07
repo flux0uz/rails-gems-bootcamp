@@ -1,0 +1,20 @@
+%footer
+  .container-fluid
+    .row.py-5
+      .col-md-4
+        Copyright
+        c
+        = Time.now.year
+        CoursePlatform Sp. z o.o.
+        .row
+        .fa.fa-envelope
+        = mail_to 'support@rubygems.com'
+        .row
+      .col-md-4
+        Privacy policy
+        .row
+        Terms & conditions
+      .col-md-4
+        About us
+        .row
+        = link_to 'Teach on CoursePlatform', new_course_path

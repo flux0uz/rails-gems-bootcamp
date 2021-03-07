@@ -34,8 +34,11 @@ gem "faker"
 # User authentication
 gem "devise"
 # Friendly ID
-gem 'friendly_id', '~> 5.4.0'
-
+gem "friendly_id", "~> 5.4.0"
+# Filter
+gem "ransack"
+# Track users actions & activity
+gem "public_activity"
 
 
 # Reduces boot times through caching; required in config/boot.rb

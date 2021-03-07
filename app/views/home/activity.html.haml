@@ -1,0 +1,18 @@
+%h3.mb-5
+  .text-center
+    Activity
+    .badge.badge-info
+      = @activities.count
+
+%ul.list-group
+  - @activities.each do |activity|
+    %li.list-group-item
+      -# = activity.id
+      = activity.trackable_type
+      -# = activity.trackable_id
+      = link_to activity.trackable, activity.trackable
+      was
+      = activity.key.split(".").last + "d"
+      -# = activity.parameters
+      by
+      = activity.owner.username
