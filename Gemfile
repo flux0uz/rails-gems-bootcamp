@@ -33,6 +33,9 @@ gem "simple_form"
 gem "faker"
 # User authentication
 gem "devise"
+# Friendly ID
+gem 'friendly_id', '~> 5.4.0'
+
 
 
 # Reduces boot times through caching; required in config/boot.rb

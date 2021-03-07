@@ -1,1 +1,56 @@
-%h1 Hello World!
+.jumbotron
+  .display-4
+    What do you want to learn today?
+  .form-inline.my-4
+    = form_tag(courses_path, method: :get) do
+      .input-group
+        = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search", class: 'form-control-sm'
+        %span.input-group-append
+          %button.btn.btn-primary.btn-sm{:type => "submit"}
+            %span.fa.fa-search{"aria-hidden" => "true"}
+.card-group
+  .card.card-body
+    %h2
+      .fa.fa-graduation-cap
+    = Course.count
+    online courses
+    .row
+    Explore a variety of fresh topics
+  .card.card-body
+    %h2
+      .fa.fa-chalkboard-teacher
+      /.fa.fa-brain
+    = Course.distinct.count(:user_id)
+    expert instructors
+    .row
+    Find the right instructor for you
+  .card.card-body
+    %h2
+      .fa.fa-user-graduate
+    = User.count
+    active learners
+    .row
+    Join the knowledge sharing community
+  .card.card-body
+    %h2
+      .fa.fa-infinity
+    Lifetime access
+    .row
+    Learn on your schedule
+
+.home-courses-container
+  %hr
+  %h3
+    Popular courses
+  .card-columns
+    = render @courses
+  %hr
+  %h3
+    Top rated courses
+  .card-columns
+    = render @courses
+  %hr
+  %h3
+    Latest courses
+  .card-columns
+    = render @latest_courses
